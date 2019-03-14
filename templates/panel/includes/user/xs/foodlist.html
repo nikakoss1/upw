@@ -1,0 +1,41 @@
+{% load has_group %}
+{% if object.personalnutrimentprofile.nutriment_counter > 0 %}<div class="alert alert-primary alert-styled-left">
+    <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span class="sr-only">Закрыть</span></button>
+    Сделать программ питания: {{ object.personalnutrimentprofile.nutriment_counter }}
+</div>
+{% endif %}
+<div class="panel-group" id="accordion_food">
+  {% for program in foodprogram %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <div class="row">
+            <div class="col-xs-8">
+              <a data-toggle="collapse" data-parent="#accordion_food" href="#collapse_food{{ forloop.counter }}">
+              {% if program.name %}{{program.name}}{%else%}{{program.created}}{%endif%}</a>
+            </div>
+            <div class="col-xs-2">
+              <a href="{% url 'accounts:foodprogram_detail' slug=object.slug pk=program.pk  %}"><i class="icon-pencil5"></i></a>
+            </div>
+            <div class="col-xs-2">
+              {% if request.user|has_group:"trainers" %}<a href="{% url 'accounts:foodprogramclone_create' slug=object.slug pk=program.pk  %}"><i class="icon-copy3"></i></a>{% endif %}
+            </div>
+          </div>
+        </h4>
+      </div>
+      <div id="collapse_food{{ forloop.counter }}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li> Дата: {{ program.created}}</li>
+            {% if program.name %}<li>{{ program.name }}</li>{% endif %}
+            {% if program.content %}<li>{{ program.get_content }}</li>{% endif %}
+          </ul>
+          <div class="btn-group">
+            <a href="{% url 'accounts:foodprogram_update' slug=object.slug pk=program.pk  %}" class="btn btn-primary">Редактировать</a>
+            <a href="{% url 'accounts:foodprogram_delete' slug=object.slug pk=program.pk   %}" class="btn btn-primary">Удалить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

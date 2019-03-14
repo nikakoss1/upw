@@ -1,0 +1,74 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="panel panel-flat">
+    <div class="datatable-responsive">
+       <table class="table datatable-basic">
+           <thead>
+               <tr>
+                   <th>№</th>
+                   <th>Код</th>
+                   <th>Тип</th>
+                   <th>Дни</th>
+                   <th>Статус</th>
+                   <th class="text-center">Действия</th>
+               </tr>
+           </thead>
+           <tbody>
+               {% for obj in promos %}
+                   <tr>
+                       <td>{{ forloop.counter }}</td>
+                       <td>{{ obj.name|upper }}</td>
+                       <td>{% if obj.free %}Бесплатный{% else %}Платный{% endif %}</td>
+                       <td>{{ obj.catalog_order_time.days }}</td>
+                       <td>{% if obj.used %}Использован{% endif %}</td>
+                       <td class="text-center">
+                           <ul class="icons-list">
+                               <li class="dropdown">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       <i class="icon-menu9"></i>
+                                   </a>
+                                   <ul class="dropdown-menu dropdown-menu-right">
+                                       <li><a href="{{ obj.get_update_url }}"><i class="icon-pencil"></i> Редактировать</a></li>
+                                       <li><a href="{{ obj.get_delete_url }}"><i class="icon-cross2"></i> Удалить</a></li>
+                                   </ul>
+                               </li>
+                           </ul>
+                       </td>
+                   </tr>
+               {% endfor %}
+           </tbody>
+       </table>
+    </div>
+</div>
+
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}
+{% block callscript %}
+    <script type="text/javascript">
+        // Basic initialization
+        $('.datatable-basic').DataTable({
+            autoWidth: false,
+            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            language: {
+                search: '<span>Фильтр:</span> _INPUT_',
+                lengthMenu: '<span>Показать:</span> _MENU_',
+                paginate: { 'first': 'Первая', 'last': 'Последняя', 'next': '→', 'previous': '←' }
+            },
+            drawCallback: function () {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+            },
+            preDrawCallback: function() {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+            }
+        });
+    </script>
+{% endblock callscript %}

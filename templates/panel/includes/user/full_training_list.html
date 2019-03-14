@@ -1,0 +1,25 @@
+<div class="table-responsive table-bordered movie-table">
+  <table class="table movie-table">
+        <thead>
+        <tr class= "movie-table-head">
+            <th>Упражнение</th>
+            <th>Описание</th>
+            <th>Отдых</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for wset in wsets %}
+        <tr class= "dark-row">
+            <td colspan='3'>Сет №{{ wset.number }}, {% if wset.content != None %}{{ wset.content}},{% endif%} подходов: {{ wset.approach_number }}, отдых: {{ wset.rest_time }}</td>
+        </tr>
+        {% for training in wset.training_set.all %}
+          <tr class="movie-table-head">
+              <td>{{ training.exercise }}</td>
+              <td>{{ training.content }}</td>
+              <td>{{ training.rest_time }}</td>
+          </tr>
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+ {% for obj in food_templates %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ obj.created }}</td>
+        <td><a href="{{ obj.get_detail_url}}">{{ obj.name }}</a></td>
+        <td></td>
+        <td></td>
+
+        <td class="text-center">
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-menu9"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="{{ obj.get_update_url }}"><i class="icon-pencil"></i> Редактировать</a></li>
+                        <li><a href="{{ obj.get_delete_url }}"><i class="icon-cross2"></i> Удалить</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+{% endfor %}

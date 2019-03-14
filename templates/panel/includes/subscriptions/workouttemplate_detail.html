@@ -1,0 +1,49 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block ajax_food_scripts %}
+<script type="text/javascript" src="{% static "panel/assets/js/users/djangoajaxcalls.js" %}"></script>
+<script type="text/javascript" src="{% static "panel/assets/js/programs/workout-templates.js" %}"></script>
+{% endblock ajax_food_scripts %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-flat">
+              <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked col-md-2">
+                  {% for wset in object.generalwsettemplate_set.all %}
+                    {% if forloop.first %}
+                      <li class="active"><a href="#tab_{{ wset.number }}" id="set_{{ wset.number }}" data-toggle="pill">Сет №{{ wset.number }}</a></li>
+                    {% else %}
+                      <li><a href="#tab_{{ wset.number }}" data-toggle="pill">Сет №{{ wset.number }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                <div class="tab-content col-md-10">
+                  {% for wset in object.generalwsettemplate_set.all %}
+                    {% if forloop.first %}
+                      <div class="tab-pane active" id="tab_{{ wset.number }}" >
+                        {% include "panel/includes/subscriptions/trainingform.html" %}
+                        {% include "panel/includes/subscriptions/general_training_template_object_list.html" %}
+                      </div>
+                    {% else %}
+                      <div class="tab-pane" id="tab_{{ wset.number }}">
+                           {% include "panel/includes/subscriptions/trainingform.html" %}
+                           {% include "panel/includes/subscriptions/general_training_template_object_list.html" %}
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

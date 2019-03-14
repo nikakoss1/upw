@@ -1,0 +1,40 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load has_group %}
+{% load bloger_status %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block ajax_bloger_scripts %}
+{% endblock ajax_bloger_scripts %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="">
+            <div class="panel panel-flat table-responsive no-overflow">
+                <table class="table datatable-basic datatable-responsive">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Реферер</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in object_list %}
+                        <tr>
+                            <td>{{ obj.created }}</td>
+                            <td>{{ obj.name }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% include "panel/pagination.html" %}
+            </div>
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

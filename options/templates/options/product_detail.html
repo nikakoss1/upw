@@ -1,0 +1,99 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% load embed_video_tags %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ object.name }}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="{{ object.user.get_full_name }}" src="{{ MEDIA_URL}}{{ object.image }}" class="img-rounded img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Основная группа мышц</td>
+                        <td>{% for obj in object.muscles.all %}{{ obj }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                      </tr>
+                      <tr>
+                        <td>Дополнительная группа мышц</td>
+                        <td>{% for obj in object.other_muscles.all %}{{ obj }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                      </tr>
+                      <tr>
+                        <td>Описание упражнения</td>
+                        <td>{{ object.content }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">Краткое видео</h5>
+          </div>
+          <div class="panel-body">
+            <div class="content-group-lg">
+              <div class="embed-responsive embed-responsive-16by9">
+                {% video object.short_video as my_video %}
+                  {% video my_video '400x300' %}
+                {% endvideo %}
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+      <div class="col-sm-6">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">Подробная техника выполнения</h5>
+          </div>
+          <div class="panel-body">
+            <div class="content-group-lg">
+              <div class="embed-responsive embed-responsive-16by9">
+                {% video object.video as my_video %}
+                  {% video my_video '400x300' %}
+                {% endvideo %}
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-body">
+            <div class="pull-right">
+              <a href="{{ object.get_update_url }}" class="btn btn-primary">Редактировать</a>
+              <a href="{{ object.get_delete_url }}" class="btn btn-danger">Удалить</a>
+            </div>
+
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

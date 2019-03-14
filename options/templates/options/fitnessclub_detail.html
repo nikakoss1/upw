@@ -1,0 +1,83 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% load embed_video_tags %}
+{% block content %}
+<!-- Content area -->
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ object.name }}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                {% for obj in images %}
+                  <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ obj.image }}" alt="">
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% if object.video_url %}
+      <div class="row">
+        <div class="col-sm-12">
+           <!-- Youtube -->
+           <div class="panel panel-flat">
+            <div class="panel-heading">
+              <h5 class="panel-title">Видео тренажеров фитнес-клуба</h5>
+            </div>
+            <div class="panel-body">
+              <div class="content-group-lg">
+                <div class="embed-responsive embed-responsive-16by9">
+                  {% video object.video_url as my_video %}
+                    {% video my_video '400x300' %}
+                  {% endvideo %}
+                </div>
+              </div>
+            </div>
+           </div>
+           <!-- /youtube -->
+        </div>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-body">
+            {{ object.content }}
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-body">
+            <div class="pull-right">
+              <a href="{{ object.get_update_url }}" class="btn btn-primary">Редактировать</a>
+              <a href="{{ object.get_delete_url }}" class="btn btn-danger">Удалить</a>
+            </div>
+
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

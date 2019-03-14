@@ -1,0 +1,68 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    {% include "memberzone/includes/xs/personal_xs_list.html" %}
+    <div class="row hidden-xs">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered table-lg text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Выбор тарифа</th>
+                            <th class="text-center">
+                                <h6 class="font-weight-semibold my-1">Количество программ</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <tr>
+                                <td class="text-left">
+                                    Персональные тренировки с тренером</br>
+                                        <div class="text-muted">
+                                            в зале, дома, на улице
+                                        </div>
+                                </td>
+                                <td>
+                                    {{ form.personal_workout_buy_package|as_crispy_field }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Персональная прогамма питания</br>
+                                        <div class="text-muted">
+                                            индивидуальная программа питания с рецептами приготовления
+                                        </div>
+                                </td>
+                                <td>
+                                    {{ form.personal_pp_buy_package|as_crispy_field }}
+                                </td>
+                            </tr>
+                            <tr class="table-border-solid">
+                                <td class="text-left">
+                                    <a href="/static/terms.pdf">Условия пользования услугами SportaApps</a></br>
+                                    <a href="/static/konf.pdf">Политика конфиденциальности</a>
+                                    <div class="text-muted">
+                                        {{ preferences.AppSettings.rekv }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Выбрать</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

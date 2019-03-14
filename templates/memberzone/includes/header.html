@@ -1,0 +1,28 @@
+  <div class="page-header page-header-default">
+      <div class="page-header-content">
+          <div class="page-title">
+              <h4></i> <span class="text-semibold">{{ title }}</span></h4>
+          </div>
+          {% if addobject %}
+              <div class="heading-elements">
+                  <div class="heading-btn-group">
+                      <a href="{{ addobject }}" class="btn btn-link btn-float has-text"><i class="icon-add text-primary"></i> <span>Добавить</span></a>
+                  </div>
+              </div>
+          {% endif %}
+          {% if wsets %}
+              <div class="heading-elements">
+                  <div class="heading-btn-group">
+
+                      <form action="{% url 'accounts:wset_create' slug=object.client.slug pk=object.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form.datainput }}
+                        <input type="hidden" value="{{ object.id }}" name="workout">
+                        <button class="btn btn-link btn-float has-text" type="submit"><i class="icon-add text-primary"></i> <span>Добавить сет</span></button>
+                      </form>
+                  </div>
+              </div>
+          {% endif %}
+      </div>
+      {% include "memberzone/includes/breadcrumbs.html" %}
+  </div>

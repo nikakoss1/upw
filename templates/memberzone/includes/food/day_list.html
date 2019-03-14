@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<div class="grid">
+    {% for obj in day_qs %}
+        <figure class="effect-ruby">
+            <img src="{% static "panel/assets/img/food.jpg" %}" alt="img14"/>
+            <figcaption>
+                <h2>{{ obj.name }}</h2>
+                <a href="{{ obj.get_member_day_detail }}">Перейти</a>
+            </figcaption>
+        </figure>
+    {% endfor %}
+</div>

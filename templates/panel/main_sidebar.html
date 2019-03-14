@@ -1,0 +1,126 @@
+ {% load staticfiles %}
+ {% load has_group %}
+<!-- Main sidebar -->
+<div class="sidebar sidebar-main">
+    <div class="sidebar-content">
+        <!-- User menu -->
+        <div class="sidebar-user">
+            <div class="category-content">
+                <div class="media">
+                    <div class="media-body">
+                        <span class="media-heading text-semibold">{{ request.user.get_full_name }}</span>
+                        <div class="font-size-xs opacity-50">
+                            {% if request.user.trainer %}
+                                {% if request.user.trainer.partner.promocode %}
+                                    <i class="icon-ticket font-size-sm"></i>
+                                    {{ request.user.trainer.partner.promocode }}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="text-size-mini text-muted">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /user menu -->
+        <!-- Main navigation -->
+        <div class="sidebar-category sidebar-category-visible">
+            <div class="category-content no-padding">
+                <ul class="navigation navigation-main navigation-accordion">
+                    <!-- Main -->
+                    {% if request.user|has_group:"main_trainers,trainers,contentmanagers,brandowners," %}
+                        <li class="navigation-header"><span>Навигация</span> <i class="icon-menu" title="Main pages"></i></li>
+                        <li>
+                            <a href="#"><i class="icon-blog"></i> <span>Лента</span></a>
+                            <ul>
+                                <li><a href="{% url 'articles:article_list' %}">Посты</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if request.user|has_group:"main_trainers,trainers,brandowners,dietologs" %}
+                        <li>
+                            <a href="#"><i class="icon-users"></i> <span>Аккаунты</span></a>
+                            <ul>
+                                <li><a href="{% url 'accounts:client_list' %}">Клиенты</a></li>
+                                {% if request.user|has_group:"brandowners" %}
+                                    <li><a href="{% url 'accounts:leaduser_list' %}">Лиды</a></li>
+                                    <li><a href="{% url 'accounts:trainer_list' %}">Тренеры</a></li>
+                                {% elif request.user|has_group:"main_trainers" %}
+                                    <li><a href="{% url 'accounts:trainer_list' %}">Тренеры</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if request.user|has_group:"brandowners," %}
+                        <li>
+                            <a href="#"><i class="icon-magic-wand"></i> <span>Настройки</span></a>
+                            <ul>
+                                <li><a href="{% url 'subscriptions:program_list' %}">Программы</a></li>
+                                <li><a href="{% url 'options:exercise_list' %}">Упражнения</a></li>
+                                <li><a href="{% url 'partners:partner_list' %}">Партнеры</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-magic-wand"></i> <span>Статистика</span></a>
+                            <ul>
+                                <li><a href="{% url 'stats:daily_stat_list' %}">Daily Stat</a></li>
+                                <li><a href="{% url 'stats:download_referer_list' %}">Статистика скачиваний</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-help"></i> <span>Помощь</span></a>
+                            <ul>
+                                <li><a href="{% url 'docs:doc_list' %}">Документация</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-stats-growth"></i> <span>Маркетинг</span></a>
+                            <ul>
+                                <li><a href="{% url 'marketing:bloger_list' %}">Блогеры</a></li>
+                            </ul>
+                        </li>
+                    {% elif request.user|has_group:"main_trainers,trainers,contentmanagers" %}
+                        <li>
+                            <a href="#"><i class="icon-magic-wand"></i> <span>Настройки</span></a>
+                            <ul>
+                                <li><a href="{% url 'options:exercise_list' %}">Упражнения</a></li>
+                                {% if request.user.trainer.partner %}
+                                    <li><a href="{% url 'partners:partner_detail' pk=request.user.trainer.partner.id %}">Промокоды</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-help"></i> <span>Помощь</span></a>
+                            <ul>
+                                <li><a href="{% url 'docs:doc_list' %}">Документация</a></li>
+                            </ul>
+                        </li>
+                    {% elif request.user|has_group:"dietologs," %}
+                        <li>
+                            <a href="#"><i class="icon-help"></i> <span>Помощь</span></a>
+                            <ul>
+                                <li><a href="{% url 'docs:doc_list' %}">Документация</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+
+                    {% if request.user|has_group:"clients," %}
+                        <li>
+                            <a href="#"><i class="icon-user"></i> <span>Личный кабинет</span></a>
+                            <ul>
+                                <li><a href="{% url 'members:memberzone_area_program_list_view' %}"><i class="icon-calendar"></i>Тренировки</a></li>
+                                <li><a href="{% url 'members:memberzone_area_food_program_list_view' %}"><i class="icon-pulse2"></i>Питание</a></li>
+                                <li><a href="{% url 'members:program_item_list' %}"><i class="icon-credit-card2"></i>Оплата</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+
+                    <!-- /main -->
+                </ul>
+            </div>
+        </div>
+        <!-- /main navigation -->
+    </div>
+</div>
+<!-- /main sidebar -->

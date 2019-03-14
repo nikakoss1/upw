@@ -1,0 +1,51 @@
+{% load crispy_forms_tags %}
+<div class="row visible-xs">
+    <div class="col-sm-6">
+        <div class="thumbnail">
+          {% include "memberzone/includes/carusel.html" %}
+          <div class="caption">
+            <ul class="list-unstyled">
+                <li><i class="icon-checkbox-checked2 text-success"></i> 50+ программ тренировок</li>
+                <li><i class="icon-checkbox-checked2 text-success"></i> Индивидуальные программы питания</li>
+            </ul>
+            <br>
+            {% if not client.is_member %}
+                <div class="row">
+                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <div class="col-xs-6">
+                            {{ form|crispy }}
+                            <input type="hidden" name="price" value="{{month_price}}">
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-primary"> &#8381;{{ month_price|floatformat }} / мес</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <div class="col-xs-6">
+                            {{ form|crispy }}
+                            <input type="hidden" name="price" value="{{year_price}}">
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-primary"> &#8381;{{ year_price|floatformat }} / год</button>
+                        </div>
+                    </form>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-xs-12">
+                        <strong>Оплачено до {{ client.member.1 }}</strong>
+                    </div>
+                </div>
+            {% endif %}
+            <hr>
+            <a href="/static/terms.pdf">Условия пользования услугами SportaApps</a></br>
+            <a href="/static/konf.pdf">Политика конфиденциальности</a>
+            <div class="text-muted">
+                {{ preferences.AppSettings.rekv }}
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

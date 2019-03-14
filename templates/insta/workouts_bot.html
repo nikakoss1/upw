@@ -1,0 +1,11 @@
+{% for workout in workouts %}
+    #тренировканаспортеонлайн на {{ workout.name|lower }}.\n\nБольше тренировок в каталоге бесплатного приложения (ссылка в профиле @nasporte.online)\n\n
+    {% for wset in workout.wset_set.all %}
+        Сет {{ forloop.counter }} | подходов в сете: {{ wset.approach_number }} | отдых после сета: {{ wset.rest_time }}\n
+        {% for training in wset.training_set.all %}
+            {{ forloop.counter }}.{{ training.exercise }}, {{ training.content }}, отдых: {{ training.rest_time }}.\n
+        {% endfor %}
+    \n
+    {% endfor%}
+    \n\n{{tags}}</br>
+{% endfor %}

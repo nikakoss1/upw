@@ -1,0 +1,21 @@
+{% extends "panel/panel_base.html" %}{% load staticfiles %}{% load i18n %} {% block head_extra %}
+<script type="text/javascript" src="{% static "panel/assets/js/core/app.js" %}"></script>
+{% load crispy_forms_tags %}
+{% endblock head_extra %} {% block content %}{{ form.media }}
+<!-- Content area -->
+<div class="content">
+    <div class="panel panel-flat">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-lg-6 vert-space">
+                <form action="" method="post">{% csrf_token %}
+                   <p>Вы, действительно, хотите удалить тренировку: "{{ object.name }}"?</p>
+                   <input type="submit" class="btn btn-danger" value="Подтвердить" />
+                   <a href="{% url 'accounts:client_list' %}" class="btn btn-default">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

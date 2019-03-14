@@ -1,0 +1,26 @@
+
+<div class="table-responsive training-container">
+    {% if wset.training_set.all.count > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Упражнение</th>
+                    <th>Веса, комментарии к упражнению</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="trainingTable" data-trainingurl="{% url 'accounts:training_delete' %}" data-wsetcreate="{% url 'accounts:wset_create' slug=object.client.slug pk=object.id %}">
+                {% for training in wset.training_set.all%}
+                <tr class="trainingRow" data-training="{{ training.id }}">
+                    <td>{{ training.exercise }}</td>
+                    <td>{{ training.content }}</td>
+                    <td>{{ training.rest_time }}</td>
+                    <td><a href="#" class="removeTraining"><i class="icon-cross3" title="Удалить упражнение"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+

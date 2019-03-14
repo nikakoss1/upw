@@ -1,0 +1,11 @@
+<div class="breadcrumb-line">
+  <ul class="breadcrumb">
+      <li><a href="{% url 'members:program_item_list' %}"><i class="icon-home2 position-left"></i>{{ preferences.AppSettings.brand }}</a></li>
+      {% if parent_title %}<li><a href="{{ parent_url }}">{{ parent_title }}</a></li>{% endif %}
+      {% if lev1_title %}<li><a href="{{ lev1_url }}">{{ lev1_title }}</a></li>{% endif %}
+      {% if lev2_title %}<li><a href="{{ lev2_url }}">{{ lev2_title }}</a></li>{% endif %}
+      {% if lev3_title %}<li><a href="{{ lev3_url }}">{{ lev3_title }}</a></li>{% endif %}
+      {% if lev4_title %}<li><a href="{{ lev4_url }}">{{ lev4_title }}</a></li>{% endif %}
+      <li class="active">{{ title }}</li>
+  </ul>
+</div>

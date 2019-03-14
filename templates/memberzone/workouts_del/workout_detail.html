@@ -1,0 +1,39 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="panel panel-flat">
+        <div class="panel-body">
+            <!-- Accordion with left control button -->
+            <h6 class="content-group text-semibold">Left control icon <small class="display-block">Using <code>left</code> aligned control icon</small></h6>
+            <div class="panel-group panel-group-control content-group-lg" id="accordion-control">
+                {% for wset in object.wset_set.all reversed %}
+                    <div class="panel panel-white">
+                        <div class="panel-heading">
+                            <h6 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion-control" href="#accordion-control-group{{ forloop.counter }}">Сет №{{ wset.number }}, подходов: {{ wset.approach_number }}, {% if wset.rest_time is not None %}отдых после сета: {{ wset.rest_time }}{% endif %}</a>
+                            </h6>
+                        </div>
+                        <div id="accordion-control-group{{ forloop.counter }}" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                {% for training in wset.training_set.all %}
+                                    {{ training }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <!-- /accordion with left control button -->
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

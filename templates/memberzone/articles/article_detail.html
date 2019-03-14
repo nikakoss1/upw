@@ -1,0 +1,44 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+{% block glyphicons %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+{% endblock glyphicons %}
+<div class="content">
+    <!-- Post -->
+    <div class="panel">
+        <div class="panel-body">
+            <div class="content-group-lg">
+                {% include "panel/includes/carusel.html" %}
+                <h3 class="text-semibold mb-5">
+                    <a href="{{ object.get_member_article_absolute_url }}" class="text-default">{{ object.title}}</a>
+                </h3>
+                <ul class="list-inline list-inline-separate text-muted content-group">
+                    <li>{{ object.created }}</li>
+                    {% if object.draft %}<li>ЧЕРНОВИК</li>{% endif %}
+                    <li>Автор: {{ object.user.get_full_name }}</li>
+                </ul>
+
+                <div class="content-group">
+                    {{ object.content|safe }}
+                </div>
+                <div class="content-group">
+                    <a href="{{ object.get_post_detail_url }}" class="btn btn-success">Перейти на страницу</a>
+                    {% if object.draft %}<a href="{% url 'members:member_article_publish' slug=object.slug %}" class="btn btn-primary">Опубликовать</a>{% endif %}
+                    {% if not object.draft %}<a href="{% url 'members:member_article_draft' slug=object.slug %}" class="btn btn-primary">Снять с публикации</a>{% endif %}
+                    <a href="{{ object.get_member_article_update_url }}" class="btn btn-primary">Редактировать</a>
+                    <a href="{{ object.get_member_article_delete_url }}" class="btn btn-danger">Удалить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /post -->
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

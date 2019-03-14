@@ -1,0 +1,53 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% load crispy_forms_tags %}
+{% endblock head_extra %}
+{% block client_register_scripts %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock client_register_scripts %}
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <!-- Advanced login -->
+                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="panel panel-body login-form">
+                        <div class="text-center">
+                            <div class=""><a href="/"><img src="{{ MEDIA_URL }}{{ preferences.AppSettings.logo1 }}" alt="{{ preferences.AppSettings.brand }}"></a></div>
+                            <h5 class="content-group">Стать членом {{ preferences.AppSettings.brand }}<small class="display-block">* Обязательные поля</small></h5>
+                        </div>
+
+                        <div class="content-divider text-muted form-group"><span>Аккаунт</span></div>
+                        {{ form|crispy }}
+                        {{ client_form|crispy }}
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="g-recaptcha" data-sitekey="6Lcj7lUUAAAAALm25w69gShTjYe1lxs3O3Ja35yO"></div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                        <div>
+                             <button type="submit" class="btn bg-info btn-block btn-lg">Зарегистрировать <i class="icon-circle-right2 position-right"></i></button>
+                        </div>
+                        <div class="text-size-mini text-center help-block">
+                        </br>
+                            {{ preferences.AppSettings.rekv }}
+                        </div>
+
+                    </div>
+                </form>
+                <!-- /advanced login -->
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+{% endblock %}

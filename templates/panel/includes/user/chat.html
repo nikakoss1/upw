@@ -1,0 +1,30 @@
+
+   <!-- NEW CHAT -->
+      <div class="panel panel-flat">
+          <div class="panel-heading">
+          <div class="panel-body">
+              <form id="chatform">
+              <ul class="media-list chat-list content-group pre-scrollable" id="clientchat">
+                {% for message in messages %}
+                  <li class="media {% if message.userhandle == 'trainer' %}reversed{% endif %} message-container">
+                      <div class="media-body">
+                          <div class="media-content" id="message-text">{{ message.message}}</div>
+                          <span class="media-annotation display-block mt-10" id="message-date">{{ message.timestamp|date:"d/M/Y - h:m"  }}<div id="message-handler">{{ message.handle }}</div></span>
+                      </div>
+                  </li>
+                {% endfor %}
+              </ul>
+              <input id="handle" type="hidden" value='{{request.user.get_full_name}}'>
+              <input id="userhandle" type="hidden" value='trainer'>
+              <textarea id="message" type="text" class="form-control content-group" rows="3" cols="1" placeholder="Написать сообщение..."></textarea>
+
+              <div class="row">
+                  <div class="col-xs-12 text-right">
+                      <button type="submit" id="go" class="btn border-slate text-slate-800 btn-flat">Отправить</button>
+                  </div>
+              </div>
+          </form>
+          </div>
+      </div>
+    </div>
+  <!-- // NEW CHAT -->

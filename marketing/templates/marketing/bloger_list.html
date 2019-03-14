@@ -1,0 +1,88 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load has_group %}
+{% load bloger_status %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block ajax_bloger_scripts %}
+  <script type="text/javascript" src="{% static "panel/assets/js/users/djangoajaxcalls.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/plugins/autocomplete/jquery.mockjax.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/bloger.js" %}"></script>
+{% endblock ajax_bloger_scripts %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <form action="#" class="main-search">
+        <div class="input-group content-group">
+            <div class="has-feedback has-feedback-left">
+                <input type="text" class="form-control input-xlg" placeholder="Поиск" name="q" id="s" value="{{ request.GET.q }}">
+                <div class="form-control-feedback">
+                    <i class="icon-search4 text-muted text-size-base"></i>
+                </div>
+            </div>
+
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-primary btn-xlg">Поиск</button>
+            </div>
+        </div>
+
+        <div class="row search-option-buttons">
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-2 text-right">
+                <ul class="list-inline no-margin-bottom">
+                    <li><a href="{% url 'marketing:bloger_list' %}" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Сбросить поиск</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="">
+            <div class="panel panel-flat table-responsive no-overflow">
+
+                <table class="table datatable-basic datatable-responsive">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in object_list %}
+                        <form action="" method="post" enctype="multipart/form-data" class="bloger-form">{% csrf_token %}
+                            <tr data-bloger="{{ obj.id }}">
+                                <td>{{ page_obj.start_index|add:forloop.counter0 }}</a></td>
+                                <td><a href="{{ obj.get_insta_url }}">{{ obj.name }}</a></td>
+                                <td>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        {% for status in statuses %}
+                                            {% if status.0 == obj.status %}
+                                                <label class="btn btn-{{ status.0 }} bloger-status active" data-status="{{ status.0 }}">
+                                                    <input type="radio" name="options" id="option{{ forloop.counter }}" autocomplete="off" chacked>
+                                                    <span class="bloger icon-cross2"></span>
+                                                </label>
+                                            {% else %}
+                                                <label class="btn btn-{{ status.0 }} bloger-status" data-status="{{ status.0 }}">
+                                                    <input type="radio" name="options" id="option{{ forloop.counter }}" autocomplete="off">
+                                                    <span class="bloger icon-cross2"></span>
+                                                </label>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
+                            </tr>
+                        </form>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% include "panel/pagination.html" %}
+            </div>
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

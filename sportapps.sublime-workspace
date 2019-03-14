@@ -1,0 +1,1734 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"clien",
+				"client_member_qs\tstatement"
+			],
+			[
+				"d",
+				"DownloadReferer\tclass"
+			],
+			[
+				"D",
+				"DownloadRefererListView\tclass"
+			],
+			[
+				"field",
+				"field_name\tstatement"
+			],
+			[
+				"ac",
+				"active_tab"
+			],
+			[
+				"get",
+				"get_random_id\tfunction"
+			],
+			[
+				"qs",
+				"qs_ids\tstatement"
+			],
+			[
+				"ran",
+				"random_index\tstatement"
+			],
+			[
+				"Wokro",
+				"WorkoutOccupation\tclass"
+			],
+			[
+				"rando",
+				"random_id\tstatement"
+			],
+			[
+				"foodp",
+				"foodprograms_delete\tfunction"
+			],
+			[
+				"foo",
+				"foodprogram\tstatement"
+			],
+			[
+				"cre",
+				"create_time\tfunction"
+			],
+			[
+				"create",
+				"create_foodprogram\tfunction"
+			],
+			[
+				"Food",
+				"Food\tclass"
+			],
+			[
+				"progr",
+				"program_name"
+			],
+			[
+				"src_f",
+				"src_foodprogram\tstatement"
+			],
+			[
+				"fo",
+				"foodprogram\tstatement"
+			],
+			[
+				"Se",
+				"SettingsTime\tclass"
+			],
+			[
+				"rever",
+				"reversed\tclass"
+			],
+			[
+				"product",
+				"products_for_food\tstatement"
+			],
+			[
+				"kkal",
+				"kkal_in_100g\tstatement"
+			],
+			[
+				"le",
+				"leaduser\tstatement"
+			],
+			[
+				"prgram",
+				"program_name\tstatement"
+			],
+			[
+				"da",
+				"daily_program\tstatement"
+			],
+			[
+				"cont",
+				"continue\tkeyword"
+			],
+			[
+				"id",
+				"identifier\tstatement"
+			],
+			[
+				"client",
+				"client_id\tstatement"
+			],
+			[
+				"iden",
+				"identifiers\tstatement"
+			],
+			[
+				"cli",
+				"client_qs\tstatement"
+			],
+			[
+				"time",
+				"timedelta\tclass"
+			],
+			[
+				"cl",
+				"client_memeber_qs\tstatement"
+			],
+			[
+				"sh",
+				"scheduled_tasks\tstatement"
+			],
+			[
+				"Ex",
+				"ExerciseFilterForm\tclass"
+			],
+			[
+				"E",
+				"ExerciseFilterForm\tclass"
+			],
+			[
+				"htt",
+				"HttpResponseRedirect\tclass"
+			],
+			[
+				"ex",
+				"exercise"
+			],
+			[
+				"filter",
+				"filter_exercise\tstatement"
+			],
+			[
+				"tra",
+				"trainer_read\tstatement"
+			],
+			[
+				"W",
+				"WorkoutSex\tclass"
+			],
+			[
+				"Per",
+				"PersonalWorkoutBuyPackage\tclass"
+			],
+			[
+				"trainer",
+				"trainer_read"
+			],
+			[
+				"new",
+				"new_message"
+			],
+			[
+				"Lea",
+				"LeadUserNewMessagesSerializer\tclass"
+			],
+			[
+				"Cli",
+				"ClientPermissionOnly\tclass"
+			],
+			[
+				"mesa",
+				"message_ids\tstatement"
+			],
+			[
+				"messa",
+				"message_qs\tstatement"
+			],
+			[
+				"sta",
+				"status\tstatement"
+			],
+			[
+				"mess",
+				"message\tstatement"
+			],
+			[
+				"object",
+				"object_list"
+			],
+			[
+				"tran",
+				"trainer_id"
+			],
+			[
+				"user",
+				"userhandle"
+			],
+			[
+				"lead",
+				"leaduser_id"
+			],
+			[
+				"lea",
+				"leaduser_id\tstatement"
+			],
+			[
+				"gt",
+				"get_user_model\tfunction"
+			],
+			[
+				"rece",
+				"receiver_id\tparam"
+			],
+			[
+				"message",
+				"message_item\tstatement"
+			],
+			[
+				"col",
+				"col-md-10 \tBootstrap 3 Class"
+			],
+			[
+				"dum",
+				"dumps\tfunction"
+			],
+			[
+				"du",
+				"dumps\tfunction"
+			],
+			[
+				"loa",
+				"loads\tfunction"
+			],
+			[
+				"par",
+				"partners\tmodule"
+			],
+			[
+				"ut",
+				"utils\tmodule"
+			],
+			[
+				"main",
+				"main_trainers"
+			],
+			[
+				"di",
+				"dietologs"
+			],
+			[
+				"o",
+				"object\tstatement"
+			],
+			[
+				"help",
+				"help_trainers\tstatement"
+			],
+			[
+				"re",
+				"request\tstatement"
+			],
+			[
+				"ca",
+				"category_programs\tstatement"
+			],
+			[
+				"brando",
+				"brandowners"
+			],
+			[
+				"has",
+				"has_group\tfunction"
+			],
+			[
+				"img",
+				"img-thumbnail \tBootstrap 3 Class"
+			],
+			[
+				"v",
+				"video_url\tstatement"
+			],
+			[
+				"vi",
+				"video_thumb\tparam"
+			],
+			[
+				"Cate",
+				"CategorySerializer\tclass"
+			],
+			[
+				"det",
+				"detect_browser\tmodule"
+			],
+			[
+				"ge",
+				"get_queryset\tfunction"
+			],
+			[
+				"st",
+				"status\tstatement"
+			],
+			[
+				"bloger",
+				"bloger_obj\tstatement"
+			],
+			[
+				"conte",
+				"content_owner\tstatement"
+			],
+			[
+				"pan",
+				"panel-body \tBootstrap 3 Class"
+			],
+			[
+				"set",
+				"settings\tinstance"
+			],
+			[
+				"order",
+				"order_obj\tstatement"
+			],
+			[
+				"ord",
+				"order_obj\tstatement"
+			],
+			[
+				"c",
+				"conf\tmodule"
+			],
+			[
+				"order_",
+				"order_amount"
+			],
+			[
+				"Model",
+				"ModelForm\tModelForm"
+			],
+			[
+				"Pay",
+				"PaymentForm\tmodule"
+			],
+			[
+				"Tr",
+				"TrainingTemplateForm\tclass"
+			],
+			[
+				"visib",
+				"visible-xs \tBootstrap 3 Class"
+			],
+			[
+				"col-off",
+				"col-lg-offset-1 \tBootstrap 3 Class"
+			],
+			[
+				"viss",
+				"visible-xs \tBootstrap 3 Class"
+			],
+			[
+				"icon",
+				"icon-next \tBootstrap 3 Class"
+			],
+			[
+				"hidden",
+				"hidden-xs \tBootstrap 3 Class"
+			],
+			[
+				"tex",
+				"text-right \tBootstrap 3 Class"
+			],
+			[
+				"Fod",
+				"FoodProgram\tclass"
+			],
+			[
+				"sub",
+				"subscriptions\tmodule"
+			],
+			[
+				"Fo",
+				"Food\tclass"
+			],
+			[
+				"T",
+				"Time\tclass"
+			],
+			[
+				"apps",
+				"appsettings\tmodule"
+			],
+			[
+				"op",
+				"options\tmodule"
+			],
+			[
+				"te",
+				"test_celery\tfunction"
+			],
+			[
+				"m",
+				"models\tmodule"
+			],
+			[
+				"sett",
+				"settings_day\tparam"
+			],
+			[
+				"text",
+				"text-muted \tBootstrap 3 Class"
+			],
+			[
+				"Paym",
+				"PaymentForm\tclass"
+			],
+			[
+				"food",
+				"food_fat\tstatement"
+			],
+			[
+				"produ",
+				"product_weight\tstatement"
+			],
+			[
+				"is_in",
+				"is_protein_in_range\tfunction"
+			],
+			[
+				"prod",
+				"product_obj\tstatement"
+			],
+			[
+				"ma",
+				"max_pro\tstatement"
+			],
+			[
+				"min",
+				"min_pro\tstatement"
+			],
+			[
+				"inst",
+				"instance_fat_norm\tstatement"
+			],
+			[
+				"max",
+				"max_fat\tstatement"
+			],
+			[
+				"promo",
+				"promo_obj\tstatement"
+			],
+			[
+				"In",
+				"IntegerField\tclass"
+			],
+			[
+				"mem",
+				"memberzone\tmodule"
+			],
+			[
+				"resp",
+				"table-responsive \tBootstrap 3 Class"
+			],
+			[
+				"col-xs-of",
+				"col-xs-offset-4 \tBootstrap 3 Class"
+			],
+			[
+				"vis",
+				"visible-xs \tBootstrap 3 Class"
+			],
+			[
+				"hidde",
+				"hidden-xs \tBootstrap 3 Class"
+			],
+			[
+				"mon",
+				"month_price"
+			],
+			[
+				"btn",
+				"btn-lg \tBootstrap 3 Class"
+			],
+			[
+				"hidd",
+				"hidden-xs \tBootstrap 3 Class"
+			],
+			[
+				"Perso",
+				"PersonalNutrimentProfile"
+			],
+			[
+				"program",
+				"program_names"
+			],
+			[
+				"product_",
+				"product_kkal"
+			],
+			[
+				"day",
+				"day_kkal"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "memberzone/views.py",
+			"settings":
+			{
+				"buffer_size": 29333,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "appsettings/mixins.py",
+			"settings":
+			{
+				"buffer_size": 12147,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sportapps/urls.py",
+			"settings":
+			{
+				"buffer_size": 3727,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Emmet",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nikakoss/MEGA/projects/sportapps",
+		"/Users/nikakoss/MEGA/projects/sportapps/src",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/restconf",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/settings",
+		"/Users/nikakoss/MEGA/projects/sportapps/контент"
+	],
+	"file_history":
+	[
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/users/workout.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/subscriptions/customworkout.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/forms.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/forms.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/custom_training_form.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/templates/subscriptions/program_detail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings/mixins.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/chat/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/marketing/detect_browser.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/templates/stats/dailystat_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/templates/stats/downloadreferer_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/admin.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/main_sidebar.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/marketing/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/stats/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/tasks.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings/utils.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/restconf/main.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/workout_object_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/templates/subscriptions/workouttemplate_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/customworkout_detail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/templates/subscriptions/workouttemplate_form.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/templates/accounts/workout_detail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/options/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/options/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/users/suggestions.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/subscriptions/exercise-suggestions.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/user/trainingform.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/users/exercise-suggestions.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/daily_workout_generator.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/view1.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/workout_models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/options/admin.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/memberzone/tarifitem_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/options/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions/admin.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/api/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/subscriptions/workout-templates.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/trainingform.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/training_template_object_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/api/serializers.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/api/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/foodgenerator.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/insta/workouts_bot.html",
+		"/Users/nikakoss/MEGA/projects/scrapers/instagram/src/images/workouts.txt",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/insta/recipes_bot.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/urls.py",
+		"/Users/nikakoss/MEGA/nasporte.online/tags/all.txt",
+		"/Users/nikakoss/MEGA/projects/scrapers/instagram/src/images/menu.txt",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/setup/scripts/trial.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/settings/production.py",
+		"/Users/nikakoss/MEGA/nasporte.online/hi_message.txt",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/insta/recipes_clean.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/templates/accounts/client_detail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/users/food.js",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/partners/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/templates/accounts/client_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/clients/pagination.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/partners/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/pagination.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/django.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/onesygnal.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/chat/onesygnal.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/settings/base.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/settings/local.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/chat/consumers.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone/urls.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/memberzone/payment_confirm.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone/admin.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/utils.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/celery.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings/admin.py",
+		"/Users/nikakoss/MEGA/nasporte.online/posts/27.01-02.02/desc.txt",
+		"/Users/nikakoss/MEGA/nasporte.online/posts/29.01.19-1.02.19/desc.txt",
+		"/Users/nikakoss/MEGA/projects/scripts/src/tags/tags",
+		"/Users/nikakoss/MEGA/nasporte.online/tags/food.txt",
+		"/Users/nikakoss/MEGA/nasporte.online/tags/fit.txt",
+		"/Users/nikakoss/MEGA/offwork/арсенал/tz.txt",
+		"/Users/nikakoss/MEGA/nasporte.online/posts/27.01-02.02/t_desc.txt",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/blog/includes/head.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/blog/blog_base.html",
+		"/Users/nikakoss/MEGA/instagram/nasporte.online/tags/fitness.txt",
+		"/Users/nikakoss/MEGA/instagram/nasporte.online/tags/recipes.txt",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/insta/recipes.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/posts/27_01-02_02_desc.txt",
+		"/Users/nikakoss/MEGA/instagram/nasporte.online/tags/fit_data.csv",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/gunicorn_supervisor.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/asgi.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/sportapps/routing.py",
+		"/Users/nikakoss/MEGA/projects/backups/декабрь/18_12/src/chat/consumers.py",
+		"/Users/nikakoss/MEGA/projects/backups/декабрь/18_12/src/chat/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/chat/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/allapi.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/memberzone/forms.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/memberzone/includes/xs/personal_xs_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/leaduser_object_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/templates/accounts/leaduser_detail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/leaduserdetail.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/subscriptions/customworkout_form.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/setup/add_exercises.py",
+		"/Users/nikakoss/MEGA/projects/clients/ext_retail/appsettings/models.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/options/forms.py",
+		"/Users/nikakoss/MEGA/projects/backups/ноябрь/2.11.2018/src/memberzone/views.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/temp/logs/celery_errors.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/memberzone/personal_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/memberzone/includes/xs/tarifitemlist.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/chat/admin.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/ajaxmixins.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/celery_errors.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/daphne_errors.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/log/worker.log",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/accounts/templates/accounts/trainer_list.html",
+		"/Users/nikakoss/MEGA/projects/backups/ноябрь/2.11.2018/src/accounts/templates/accounts/client_list.html",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/static/panel/assets/js/users/chat.js",
+		"/Users/nikakoss/Downloads/onesignal.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/appsettings/send_mail.py",
+		"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel/includes/client_object_list.html"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/sportapps",
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions",
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/backups/июнь/1_07",
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/sportapps/scripts",
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/sportapps/src/templates/panel",
+			"/Users/nikakoss/MEGA/projects/sportapps/src",
+			"/Users/nikakoss/MEGA/projects/sportapps/src/subscriptions",
+			"/Users/nikakoss/MEGA/projects/sportapps/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"redirect",
+			"TokenIsVerified",
+			"redirect",
+			"TokenIsVerified",
+			"Signature has expired",
+			"post_sa",
+			"DetectRedirectView",
+			"1111",
+			"customwork",
+			"subscriptions/customworkout.js\"",
+			"Trainin",
+			"json_personal_exercise_list",
+			"exercises/json/",
+			"exercise",
+			"exercises",
+			"sugges",
+			"template-json",
+			"json_template_exercise_list",
+			"conso",
+			"json",
+			"template-json",
+			"HasGroupPermissionMixin",
+			"Templa",
+			"TemplateV",
+			"counter",
+			"Workout",
+			"exercise_type",
+			"value",
+			"program_is_checked",
+			"daily_workout_generator",
+			"make_workouts",
+			"json_template_exercise_list",
+			"Templa",
+			"meta",
+			"Food",
+			"food",
+			"Recipe",
+			"src_foodprogram",
+			"Client",
+			"receiver",
+			"print",
+			"kkal_to_eat",
+			"append",
+			"product_obj",
+			"Food",
+			"print",
+			"portion_range",
+			"Переку",
+			"перекус",
+			"Food",
+			"post_sa",
+			"get_time",
+			"Time",
+			"SettgingsDa",
+			"Активные",
+			"Day",
+			"FoodP",
+			"ProgramRetrieveAPIView",
+			"daily_workout_generator",
+			"\\n ",
+			"\\n",
+			"\\n ",
+			"\\n \\n ",
+			"instapp",
+			"rec",
+			"jwt",
+			"set",
+			"str_to_class",
+			"js",
+			"TemplateV",
+			"Template",
+			"Templ",
+			"TemplateV",
+			"SEX",
+			"\\n",
+			"/n",
+			"bloger_list",
+			"marketing",
+			"ClientLis",
+			"has_gene",
+			"generat",
+			"Confirm",
+			"LeadUser",
+			"ClientRegenerateSerializer",
+			"Order",
+			"Order.",
+			"Order",
+			"Order.objects.create",
+			"redis",
+			"cront",
+			"timede",
+			"today",
+			"time",
+			"CELE",
+			"preferences",
+			"pref",
+			"\\n",
+			"n",
+			" \\n",
+			"insta",
+			"instapp",
+			"insta",
+			"Client",
+			"post_save",
+			"print",
+			"get_or_n",
+			"Thread",
+			"def put",
+			"timedelta",
+			"6009.ru",
+			"today",
+			"ClientShortSerializer",
+			"Order",
+			"is_member",
+			"Order",
+			"welcome",
+			"day",
+			"Day",
+			"foodprogram_generator",
+			"delay",
+			"sddefault",
+			"youtube",
+			"new_messages_from_client",
+			"from_",
+			"LeadUser",
+			"new_mess",
+			"new_messag",
+			"new_mess"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\n",
+			"",
+			"\\n','",
+			"\\n",
+			"\\n\\n",
+			" ",
+			"client_list",
+			"accounts",
+			"",
+			"\\n",
+			"bezopasnik.su",
+			"mqdefault",
+			"",
+			"accounts:client_list",
+			" ",
+			"#",
+			" ",
+			"#",
+			"^",
+			"pk=object.id",
+			"doc",
+			"docs",
+			"doc",
+			"docs",
+			"Doc",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			", ",
+			"training_template_form",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			"(?P<slug>[\\w.@+-]+)",
+			" (?P<slug>[\\w.@+-]+)",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"  ",
+			" #",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			" ",
+			"#",
+			"ккал",
+			" ",
+			"#",
+			" | ",
+			" ",
+			" #",
+			" ",
+			"#",
+			" | ",
+			" ",
+			" #",
+			" ",
+			"#",
+			" | ",
+			" ",
+			"#",
+			" ",
+			"#",
+			" | ",
+			" ",
+			"#",
+			"Отведение руки в сторону в наклоне на блоке",
+			"}}",
+			"{{",
+			"\\n",
+			"training",
+			"training_set",
+			"workout",
+			"workouts",
+			"training_set",
+			"wset_set",
+			"workout",
+			"DecimalField(max_digits=6, decimal_places=2, null=True, blank=False)",
+			"product",
+			"max_digits=6, decimal_places=2, null=True, blank=False, default=0",
+			"validators = [MinValueValidator(0.0)]",
+			"<tr class=\"table-row\">",
+			"tr class=\"table-row\"",
+			"rest",
+			"custom_wset_",
+			"custom_training",
+			"программы",
+			"Программы",
+			"PROGRAM",
+			"program",
+			"Program",
+			"get_or_create_or_none",
+			"ExerciseType"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "memberzone/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8281,
+								8296
+							]
+						],
+						"settings":
+						{
+							"SL.244.region_keys":
+							[
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										8310,
+										8311
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										8280,
+										8281
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"show_definitions": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3546.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "appsettings/mixins.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2554,
+								2554
+							]
+						],
+						"settings":
+						{
+							"SL.245.region_keys":
+							[
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"show_definitions": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 658.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "sportapps/urls.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								400
+							]
+						],
+						"settings":
+						{
+							"SL.296.region_keys":
+							[
+							],
+							"SL.348.region_keys":
+							[
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": 348,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"show_definitions": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 94.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "sportapps.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/MEGA/projects/trydjango19/trydjango19.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

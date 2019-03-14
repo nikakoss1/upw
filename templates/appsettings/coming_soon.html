@@ -1,0 +1,69 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "blog/includes/head.html" %}
+</head>
+<body class="comingsoon">
+<div id="comingsoon-wrap" class="comingsoon-wrap text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <a href="/" class="comingsoon-logo text-center">
+                    <img src="{{ MEDIA_URL }}{{ preferences.AppSettings.logo1 }}" class="img-responsive" alt="{{ preferences.AppSettings.brand }}">
+                </a>
+                <div class="countdown-area clearfix countdown-container">
+                    <ul id="countdown" class="countdown">
+                        <li>
+                            <span class="days">00</span>
+                            <span class="time-period">Дней</span>
+                        </li>
+                        <li>
+                            <span class="hours">00</span>
+                            <span class="time-period">Часов</span>
+                        </li>
+                        <li>
+                            <span class="minutes">00</span>
+                            <span class="time-period">Минут</span>
+                        </li>
+                        <li>
+                            <span class="seconds">00</span>
+                            <span class="time-period">Секунд</span>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="social-share list-inline countdown-add-space">
+                    {% if preferences.AppSettings.fb %}<li><a target="_blank" href="{{ preferences.AppSettings.fb }}"><i class="fa fa-facebook"></i></a></li>{% endif %}
+                    {% if preferences.AppSettings.instagram %}<li><a target="_blank" href="{{ preferences.AppSettings.instagram }}"><i class="fa fa-instagram"></i></a></li>{% endif %}
+                    {% if preferences.AppSettings.vk %}<li><a target="_blank" href="{{ preferences.AppSettings.vk }}"><i class="fa fa-vk"></i></a></li>{% endif %}
+                    {% if preferences.AppSettings.twitter %}<li><a target="_blank" href="{{ preferences.AppSettings.twitter }}"><i class="fa fa-twitter"></i></a></li>{% endif %}
+                    {% if preferences.AppSettings.yt %}<li><a target="_blank" href="{{ preferences.AppSettings.yt }}"><i class="fa fa-youtube"></i></a></li>{% endif %}
+                </ul> <!-- //social-icons -->
+            </div>
+        </div> <!-- //row -->
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                По всем вопросам пишите сюда: support@sportapps.ru
+            </div>
+        </div>
+    </div> <!-- //container -->
+</div>
+
+{% include "blog/includes/scripts.html" %}
+<script src={% static "panel/assets/js/coming-soon/countdown.js" %}></script>
+<script>
+    //Countdown
+    $(document).ready(function () {
+        $("#countdown").countdown({
+                date: "01 Oct 2018 09:00:00",
+                format: "on"
+            },
+
+            function () {
+                // callback function
+            });
+    });
+</script>
+</body>
+</html>

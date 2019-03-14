@@ -1,0 +1,56 @@
+  {% load has_group %}
+ <!-- Page header -->
+    <div class="page-header">
+
+        <!-- Header content -->
+        <div class="page-header-content">
+            <div class="page-title">
+                <h4><span class="text-semibold">{{ object.user.get_full_name }}</span></h4>
+
+                <ul class="breadcrumb position-right">
+                    <li><a href="">Панель управления</a></li>
+                    <li><a href="{{ parent_url }}">{{ parent_title }}</a></li>
+                    <li class="active">{{ title }}</li>
+                </ul>
+            </div>
+
+            {% include "panel/includes/user/add_objects.html" %}
+        </div>
+        <!-- /header content -->
+
+
+        <!-- Toolbar -->
+        <div class="navbar navbar-default navbar-component navbar-xs">
+            <ul class="nav navbar-nav visible-xs-block">
+                <li class="full-width text-center"><a data-toggle="collapse" data-target="#navbar-filter"><i class="icon-menu7"></i></a></li>
+            </ul>
+
+            <div class="navbar-collapse collapse" id="navbar-filter">
+                <ul class="nav navbar-nav">
+                    {% if request.user|has_group:"main_trainers,brandowners,trainers" %}
+                        <li class="active"><a href="#trainings" data-toggle="tab"><i class="icon-calendar position-left"></i> Тренировки</a></li>
+                    {% endif %}
+                    {% if request.user|has_group:"main_trainers,brandowners" %}
+                        <li><a href="#food" data-toggle="tab"><i class="icon-pulse2 position-left"></i> Питание </a></li>
+                    {% elif request.user|has_group:"dietologs," %}
+                        <li class="active"><a href="#food" data-toggle="tab"><i class="icon-pulse2 position-left"></i> Питание </a></li>
+                    {% endif %}
+                    <li><a href="#activity" data-toggle="tab"><i class="icon-menu7 position-left"></i> Активность</a></li>
+                    <li><a href="#chat" data-toggle="tab" id='id_chat_button'><i class="icon-stack-text position-left"></i> Чат </a></li>
+                    <li><a href="#progress" data-toggle="tab"><i class="icon-stats-growth position-left"></i> Прогресс</a></li>
+                    <li><a href="#note" data-toggle="tab"><i class="icon-paste2 position-left"></i> Заметки</a></li>
+                    <li><a href="#anketa" data-toggle="tab"><i class="icon-paste2 position-left"></i> Анкета</a></li>
+
+                </ul>
+
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /toolbar -->
+
+    </div>
+    <!-- /page header -->

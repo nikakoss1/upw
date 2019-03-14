@@ -1,0 +1,67 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% load embed_video_tags %}
+{% block ajax_workout_scripts %}
+  <script type="text/javascript" src="{% static "panel/assets/js/users/djangoajaxcalls.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/plugins/autocomplete/jquery.mockjax.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/plugins/autocomplete/jquery.autocomplete.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/users/workout.js" %}"></script>
+  <script type="text/javascript" src="{% static "panel/assets/js/users/suggestions.js" %}"></script>
+{% endblock ajax_workout_scripts %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-flat">
+              <div class="panel-body">
+                <div class="test-div" data-exercise></div>
+                <ul class="nav nav-pills nav-stacked col-md-2">
+                  {% for wset in wsets %}
+                    {% if forloop.first %}
+                      <li class="active"><a href="#tab_{{ wset.number }}" id="set_{{ wset.number }}" data-toggle="pill">Сет №{{ wset.number }}</a></li>
+                    {% else %}
+                      <li><a href="#tab_{{ wset.number }}" data-toggle="pill">Сет №{{ wset.number }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                <div class="tab-content col-md-10">
+                  {% for wset in wsets %}
+                    {% if forloop.first %}
+                      <div class="tab-pane active" id="tab_{{ wset.number }}" >
+                        {% include "panel/includes/user/trainingform.html" %}
+                        {% include "panel/includes/training_object_list.html" %}
+                      </div>
+                    {% else %}
+                      <div class="tab-pane" id="tab_{{ wset.number }}">
+                           {% include "panel/includes/user/trainingform.html" %}
+                           {% include "panel/includes/training_object_list.html" %}
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    {% if workout.suggestions %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-flat">
+              <div class="panel-body">
+                {% include "panel/includes/subscriptions/trainingform2.html" %}
+                <div class="col-md-12 table-responsive" id="exercise_table_list">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

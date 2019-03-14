@@ -1,0 +1,39 @@
+{% extends "panel/panel_base.html" %}{% load staticfiles %}{% load i18n %} {% block head_extra %}
+{% load crispy_forms_tags %}
+{% endblock head_extra %} {% block content %}{{ form.media }}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Basic datatable -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">{{ title }}</h5>
+                </div>
+                <div class="panel-body">
+                    Действие необратимо.
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-11 simple-data-form">
+                               <form action="" method="post">{% csrf_token %}
+                                   <p>Вы, действительно, хотите удалить: "{{ object.name }}"?</p>
+                                   <input type="submit" class="btn btn-danger" value="Подтвердить" />
+                                   <a href="{% url 'options:exercise_list' %}" class="btn btn-default">Отмена</a>
+                               </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+            <!-- /basic datatable -->
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

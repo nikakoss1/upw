@@ -1,0 +1,68 @@
+{% extends "blog/blog_base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="infinite-container">
+    {% for object in object_list %}
+        <div class="infinite-item">
+            <article class="single-blog">
+                <div class="post-thumb">
+                    {% for image in object.articleimage_set.all|slice:":1" %}
+                        <a href="{{ object.get_post_detail_url }}"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ object.title|truncatechars:50 }}" class="img-responsive"></a>
+                    {% endfor %}
+                </div>
+                <div class="post-content">
+                    <div class="entry-header text-center text-uppercase">
+                        <h2><a href="{{ object.get_post_detail_url }}">{{ object.title }}</a></h2>
+                    </div>
+                    <div class="entry-content">
+                        {{ object.content|striptags|truncatechars:450 }}
+                    </div>
+                    <div class="continue-reading text-center text-uppercase">
+                        <a href="{{ object.get_post_detail_url }}">Подробнее</a>
+                    </div>
+                    <div class="post-meta">
+                        <ul class="pull-left list-inline author-meta">
+                            <li class="author">{{ object.user.get_full_name }}, </li>
+                            <li class="date">{{ object.created }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    {% empty %}
+        <div class="infinite-item">
+            <article class="single-blog">
+                <div class="post-thumb">
+                    <a href=""><img src="assets/images/post-thumb-1.jpg" alt=""></a>
+                </div>
+                <div class="post-content">
+                    <div class="entry-header text-center text-uppercase">
+                        <h2><a href="#">Нет ничего по этому запросу, попробуйте другой!</a></h2>
+                    </div>
+                </div>
+            </article>
+        </div>
+    {% endfor %}
+</div>
+<div class="loading" style="display: none;">
+    Загружаем...
+</div>
+{% if page_obj.has_next %}
+<a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">еще</a>
+{% endif %}
+{% block infinitescripts %}
+<script src="{% static 'panel/assets/js/infinite/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'panel/assets/js/infinite/infinite.min.js' %}"></script>
+<script>
+    var infinite = new Waypoint.Infinite({
+      element: $('.infinite-container')[0],
+      onBeforePageLoad: function () {
+        $('.loading').show();
+      },
+      onAfterPageLoad: function ($items) {
+        $('.loading').hide();
+      }
+    });
+</script>
+{% endblock infinitescripts %}
+{% endblock content %}

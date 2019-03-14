@@ -1,0 +1,118 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    {% include "memberzone/includes/xs/tarifitemlist.html" %}
+    <div class="row hidden-xs">
+        <div class="col-12">
+            <p>{{ result }}</p>
+            {% include "memberzone/includes/carusel.html" %}
+        </div>
+    </div>
+    <div class="row hidden-xs">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered table-lg text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Выбор тарифа</th>
+                            <th class="text-center">
+                                <h6 class="font-weight-semibold my-1">За 1 месяц</h6>
+                                <h4 class="font-weight-semibold mb-0">
+                                    &#8381;{{ month_price|floatformat }}
+                                    <span class="font-size-base text-muted font-weight-normal">/ мес</br>
+                                        {% if month_economy > 0 %}Экономия &#8381;{{ month_economy|floatformat }} {% endif%}
+                                    </span>
+                                </h4>
+                            </th>
+                            <th class="text-center">
+                                <h6 class="font-weight-semibold my-1">За 12 месяцев</h6>
+                                <h4 class="font-weight-semibold mb-0">
+                                    &#8381;{{ year_price|floatformat }}
+                                    <span class="font-size-base text-muted font-weight-normal">/ год </br>
+                                        {% if year_economy > 0 %}Экономия &#8381;{{ year_economy|floatformat }} {% endif%}
+                                    </span>
+                                </h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">
+                                Каталог тренировочных программ</br>
+                                    <div class="text-muted">
+                                        для похудения, в зале, ежедневные, на улице,</br> дома, авторские и множество других
+                                    </div>
+                            </td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Эксклюзивные авторские тренировки</br>
+                                    <div class="text-muted">
+                                        программы тренировок от известных атлетов
+                                    </div>
+                            </td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Каталог программ питания</br>
+                                    <div class="text-muted">
+                                        программы питания,</br> разработанные под Вас для похудения, набора массы </br> или здорового питания на каждый день
+                                    </div>
+                            </td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                            <td><i class="icon-checkbox-checked2 text-success"></i></td>
+                        </tr>
+                        {% if not client.is_member %}
+                            <tr class="table-border-solid">
+                                <td class="text-left">
+                                    <a href="/static/terms.pdf">Условия пользования услугами SportaApps</a></br>
+                                    <a href="/static/konf.pdf">Политика конфиденциальности</a>
+                                    <div class="text-muted">
+                                        {{ preferences.AppSettings.rekv }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        {{ form|crispy }}
+                                        <input type="hidden" name="price" value="{{month_price}}">
+                                        <button type="submit" class="btn btn-primary">Выбрать</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        {{ form|crispy }}
+                                        <input type="hidden" name="price" value="{{year_price}}">
+                                        <button type="submit" class="btn btn-primary">Выбрать</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr class="table-border-solid">
+                                <td class="text-left">
+                                    <a href="/static/terms.pdf">Условия пользования услугами SportaApps</a></br>
+                                    <a href="/static/konf.pdf">Политика конфиденциальности</a>
+                                    <div class="text-muted">
+                                        {{ preferences.AppSettings.rekv }}
+                                    </div>
+                                </td>
+                                <td colspan="2"><strong>Оплачено до {{ client.member.1 }}</strong></td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

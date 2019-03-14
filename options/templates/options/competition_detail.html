@@ -1,0 +1,108 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% load embed_video_tags %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ object.name }}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="{{ object.user.get_full_name }}" src="{{ MEDIA_URL}}{{ object.image }}" class="img-rounded img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Название</td>
+                        <td>{{ object.name }}</td>
+                      </tr>
+                      <tr>
+                        <td>Статус</td>
+                        <td>
+                        {% if object.status.status == 'Активный' %}
+                            <span class="label label-success">{{ object.status }}</span>
+                        {% elif object.status.status == 'Подсчет результатов' %}
+                            <span class="label label-info">{{ object.status }}</span>
+                        {% elif object.status.status == 'Закончен' %}
+                            <span class="label label-default">{{ object.status }}</span>
+                        {% endif %}</td>
+                      </tr>
+                      <tr>
+                        <td>Старт</td>
+                        <td>{{ object.start_date }}</td>
+                      </tr>
+                      <tr>
+                        <td>Финиш</td>
+                        <td>{{ object.finish_date }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">Описание</h5>
+          </div>
+          <div class="panel-body">
+                {{ object.content|safe }}
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% if object.video %}
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">Видео</h5>
+          </div>
+          <div class="panel-body">
+            <div class="content-group-lg">
+              <div class="embed-responsive embed-responsive-16by9">
+                {% video object.video as my_video %}
+                  {% video my_video '400x300' %}
+                {% endvideo %}
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-body">
+            <div class="pull-right">
+              <a href="{{ object.get_update_url }}" class="btn btn-primary">Редактировать</a>
+              <a href="{{ object.get_delete_url }}" class="btn btn-danger">Удалить</a>
+            </div>
+
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

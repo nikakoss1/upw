@@ -1,0 +1,37 @@
+{% load crispy_forms_tags %}
+<div id="suggest">
+    <form action="." method="post" data-url="{% url 'subscriptions:training_template_create' %}" class="ajaxTrainingForm" data-wset="{{ wset.id }}" data-workout="{{ workout.id }}" data-program="{{ workout.program.id }}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                {{ training_template_form.main_muscle|as_crispy_field }}
+            </div>
+
+            <div class="col-md-3">
+                {{ training_template_form.other_muscle|as_crispy_field }}
+            </div>
+            <div class="col-md-3">
+                {{ training_template_form.exercise_type|as_crispy_field }}
+            </div>
+             <div class="col-md-3">
+                {{ training_template_form.repetition|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                {{ training_template_form.biomech|as_crispy_field }}
+            </div>
+
+            <div class="col-md-3">
+                {{ training_template_form.vektor|as_crispy_field }}
+            </div>
+            <div class="col-md-3">
+                {{ training_template_form.equipment|as_crispy_field }}
+            </div>
+             <div class="col-md-3">
+                {{ training_template_form.difficulty_level|as_crispy_field }}
+            </div>
+        </div>
+
+    </form>
+</div>

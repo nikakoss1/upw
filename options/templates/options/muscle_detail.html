@@ -1,0 +1,49 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <!-- Search field -->
+    <div class="panel">
+        <div class="panel-body">
+            <form action="#" class="main-search">
+                <div class="input-group content-group">
+                    <div class="has-feedback has-feedback-left">
+                        <input type="text" class="form-control input-xlg" placeholder="Каталог упражнений {% if queryset %}({{ queryset.count }}) {% endif %}" name="q" id="s" value="{{ request.GET.q }}">
+                        <div class="form-control-feedback">
+                            <i class="icon-search4 text-muted text-size-base"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary btn-xlg">Поиск</button>
+                    </div>
+                </div>
+
+                <div class="row search-option-buttons">
+                    <div class="col-sm-10">
+                        <div class="category-container">
+                            По мышцам: {% for obj in muscles %} <a href="{{ obj.get_absolute_url }}">{{ obj }}
+                            ({{ obj.exercise_set.all.count }})
+                            </a> {% if not forloop.last %}|{% endif %} {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <ul class="list-inline no-margin-bottom">
+                            <li><a href="{% url 'options:exercise_list' %}" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Сбросить поиск</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+                        <!-- /search field -->
+    {% include "panel/includes/exercise_object_list.html" %}
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

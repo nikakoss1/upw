@@ -1,0 +1,14 @@
+{% extends "blog/blog_base.html" %}
+{% block cleantext %}
+{% for day in days %}
+Пример  #менюнаспортеонлайн на {{ day.get_day_kbzu.0|floatformat:0 }} ККАЛ.\n\n
+Эта и другие программы питания с рецептами приготовления в каталоге нашего бесплатного приложения (ссылка в профиле @nasporte.online)\n\n
+{% for food_time in day.time_set.all %}
+{{ food_time.settingstime.name }} | К:{{ food_time.kkal|floatformat:0 }} Б:{{ food_time.protein|floatformat:0 }} Ж:{{ food_time.fat|floatformat:0 }} У:{{ food_time.carbohydrate|floatformat:0 }}\n
+{% for food in food_time.food_set.all %}
+{{ food.product.name }}, вес: {{ food.weight|floatformat:0 }}г\n\n
+{% endfor %}
+{% endfor %}
+Итого: К:{{ day.get_day_kbzu.0|floatformat:0 }} Б:{{ day.get_day_kbzu.1|floatformat:0 }} Ж:{{ day.get_day_kbzu.2|floatformat:0 }} У:{{ day.get_day_kbzu.3|floatformat:0 }}\n\n\n\n{{tags}}</br>
+{% endfor %}
+{% endblock cleantext %}

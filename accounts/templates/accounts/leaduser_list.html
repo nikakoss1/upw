@@ -1,0 +1,19 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    {% include "panel/includes/leaduser_object_list.html" %}
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}
+{% block user_scripts %}
+{% endblock user_scripts %}
+{% block callscript %}
+
+{% endblock callscript %}

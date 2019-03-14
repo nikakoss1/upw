@@ -1,0 +1,30 @@
+ {% load has_group %}
+<div class="panel panel-flat">
+    <div class="panel-body">
+      <table class="table datatable-basic datatable-responsive">
+              <thead>
+                  <tr>
+                      <th>Дата составления</th>
+                      <th>Название</th>
+                      <th>Комментарии к тренировке</th>
+                      <th>Оттренировано</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for workout in object_list %}
+                      <tr>
+                          <td><a href="{{ workout.get_member_workout_absolute_url }}">{{ workout.created }}</a> </td>
+                          <td>Тренировка №{{ forloop.counter }}</td>
+                          <td>{% if workout.content != None %}{{ workout.content }}{% endif %}</td>
+                          <td>{% if workout.done %}Да{% else %}Нет{% endif %}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+    </div>
+</div>
+
+
+
+
+

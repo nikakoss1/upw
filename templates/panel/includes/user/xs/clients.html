@@ -1,0 +1,31 @@
+  <div class="panel-group" id="accordion">
+    {% for obj in object_list %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <div class="row">
+              <div class="col-xs-8">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}">
+                {{obj.user.get_full_name}}</a>
+              </div>
+              <div class="col-xs-2">
+                <a href="{{ obj.get_absolute_url }}"><i class="icon-pencil5"></i></a>
+              </div>
+              <div class="col-xs-2">
+                <a href="{{ obj.get_counters_url }}"><i class="icon-plus2"></i></a>
+              </div>
+            </div>
+          </h4>
+        </div>
+        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse">
+          <div class="panel-body">
+            <ul>
+              <li>Возраст: {{ obj.age|floatformat }}</li>
+              {% if obj.personalworkoutprofile.country %}<li>Страна: {{ obj.personalworkoutprofile.country }}</li>{% endif %}
+              {% if obj.personalworkoutprofile.city %}<li>Город: {{ obj.personalworkoutprofile.city }}</li>{% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>

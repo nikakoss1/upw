@@ -1,0 +1,164 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+ {% load has_group %}
+{% load staticfiles %}
+{% block head_extra %}
+{% load embed_video_tags %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ object.user.get_full_name }}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="{{ object.user.get_full_name }}" src="{{ MEDIA_URL}}{{ object.avatar }}" class="img-rounded img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Пользователь</td>
+                        <td>{% if object.user.is_active %} <span class="bg-success text-highlight">Активный</span> {% else %} <span class="bg-danger text-highlight">Отключен</span>  {% endif %}</td>
+                      </tr>
+                      <tr>
+                        <td>Главный тренер</td>
+                        <td>{% if object.is_boss %}Да{% else %}НЕТ{% endif %}</td>
+                      </tr>
+                      <tr>
+                        <td>Город</td>
+                        <td>{{ object.city }}</td>
+                      </tr>
+                      <tr>
+                        <td>Описание</td>
+                        <td>{{ object.content }}</td>
+                      </tr>
+                      <tr>
+                        <td>Телефон</td>
+                        <td>{{ object.phone }}</td>
+                      </tr>
+                      <tr>
+                        <td>Skype</td>
+                        <td>{{ object.skype }}</td>
+                      </tr>
+                      <tr>
+                        <td>WhatsApp</td>
+                        <td>{{ object.whatsapp }}</td>
+                      </tr>
+                      <tr>
+                        <td>Instagram</td>
+                        <td>{{ object.mail }}</td>
+                      </tr>
+                      <tr>
+                        <td>Vkontakte</td>
+                        <td>{{ object.vk }}</td>
+                      </tr>
+                      <tr>
+                        <td>Odnoklassniki</td>
+                        <td>{{ object.ok }}</td>
+                      </tr>
+                      <tr>
+                        <td>Facebook</td>
+                        <td>{{ object.fb }}</td>
+                      </tr>
+                      <tr>
+                        <td>Youtube</td>
+                        <td>{{ object.yt }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" >
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <div class="row">
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image1 }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image2 }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image3 }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image4 }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image5 }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                      <img src="{{ MEDIA_URL }}{{ object.image6 }}" alt="">
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% if object.promo_video %}
+      <div class="row">
+        <div class="col-sm-12">
+           <!-- Youtube -->
+           <div class="panel panel-flat">
+            <div class="panel-heading">
+              <h5 class="panel-title">Видео проморолик</h5>
+            </div>
+            <div class="panel-body">
+              <div class="content-group-lg">
+                <div class="embed-responsive embed-responsive-16by9">
+                  {% video object.promo_video as my_video %}
+                    {% video my_video '400x300' %}
+                  {% endvideo %}
+                </div>
+              </div>
+            </div>
+           </div>
+           <!-- /youtube -->
+        </div>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+         <!-- Youtube -->
+         <div class="panel panel-flat">
+          <div class="panel-body">
+            <div class="pull-right">
+              {% if request.user|has_group:"brandowners" %}
+               <a href="{{ object.get_update_url }}" class="btn btn-primary">Редактировать</a>
+              {% endif %}
+              {% if object.user.is_active %}<a href="{% url 'accounts:trainer_disable' pk=object.pk %}" class="btn btn-primary">Отключить пользователя</a>{% endif %}
+              {% if not object.user.is_active %}<a href="{% url 'accounts:trainer_enable' pk=object.pk %}" class="btn btn-primary">Включить пользователя</a>{% endif %}
+              <a href="{{ object.get_delete_url }}" class="btn btn-danger">Удалить</a>
+            </div>
+
+          </div>
+         </div>
+         <!-- /youtube -->
+      </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

@@ -1,0 +1,13 @@
+<div class="grid">
+    {% for obj in category_qs %}
+        <figure class="effect-lily">
+            <img src="{{MEDIA_URL}}{{obj.img}}" alt="img12"/>
+            <figcaption>
+                <div>
+                    <h2>{{ obj.name }}</h2>
+                </div>
+                <a href="{{ obj.get_absolute_url }}">Перейти</a>
+            </figcaption>
+        </figure>
+    {% endfor %}
+</div>

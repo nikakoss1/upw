@@ -1,0 +1,131 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load has_group %}
+{% block head_extra %}
+{% load embed_video_tags %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/user/header.html" %}
+<div class="content">
+  <!-- User profile -->
+  <div class="row">
+      <div class="tabbable">
+          <div class="tab-content">
+            {% if request.user|has_group:"main_trainers,brandowners,trainers" %}
+              <div class="tab-pane fade in active" id="trainings">
+                <div class="col-lg-12">
+                  <div class="visible-xs">
+                    {% include "panel/includes/user/xs/workouts.html" %}
+                  </div>
+                  <div class="hidden-xs">
+                    {% include "panel/includes/user/workouts.html" %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if request.user|has_group:"main_trainers,brandowners" %}
+              <div class="tab-pane fade" id="food">
+                <div class="col-lg-12">
+                  <div class="visible-xs">
+                    {% include "panel/includes/user/xs/foodlist.html" %}
+                  </div>
+                  <div class="hidden-xs">
+                    {% include "panel/includes/user/foodlist.html" %}
+                  </div>
+                </div>
+              </div>
+            {% elif request.user|has_group:"dietologs," %}
+              <div class="tab-pane fade in active" id="food">
+                <div class="col-lg-12">
+                  <div class="visible-xs">
+                    {% include "panel/includes/user/xs/foodlist.html" %}
+                  </div>
+                  <div class="hidden-xs">
+                    {% include "panel/includes/user/foodlist.html" %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            <div class="tab-pane fade" id="activity">
+              <div class="col-lg-9">
+                <div class="col-lg-12">
+                  <div class="visible-xs">
+                    {% include "panel/includes/user/xs/activity.html" %}
+                  </div>
+                  <div class="hidden-xs">
+                    {% include "panel/includes/user/activity.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                  {% include "panel/includes/user/sidebar.html" %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="chat">
+              <div class="col-lg-9">
+                {% include "panel/includes/user/chat.html" %}
+              </div>
+              <div class="col-lg-3">
+                  {% include "panel/includes/user/sidebar.html" %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="progress">
+              <div class="col-lg-12">
+                {% include "panel/includes/user/progress.html" %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="note">
+              <div class="col-lg-9">
+                {% include "panel/includes/user/note.html" %}
+              </div>
+              <div class="col-lg-3">
+                  {% include "panel/includes/user/sidebar.html" %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="anketa">
+              <div class="col-lg-9">
+                {% include "panel/includes/user/anketa.html" %}
+              </div>
+              <div class="col-lg-3">
+                  {% include "panel/includes/user/sidebar.html" %}
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+  </div>
+  <!-- /user profile -->
+  {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}
+{% block user_scripts %}
+<script type="text/javascript" src='{% static "panel/assets/js/users/reconnecting-websocket.min.js" %}'></script>
+<script type="text/javascript" src='{% static "panel/assets/js/users/chat.js" %}'></script>
+{% endblock user_scripts %}
+{% block callscript %}
+    <script type="text/javascript">
+        // Basic initialization
+        $('.datatable-basic').DataTable({
+            autoWidth: false,
+            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            language: {
+                search: '<span>Фильтр:</span> _INPUT_',
+                lengthMenu: '<span>Показать:</span> _MENU_',
+                paginate: { 'first': 'Первая', 'last': 'Последняя', 'next': '→', 'previous': '←' }
+            },
+            drawCallback: function () {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+            },
+            preDrawCallback: function() {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+            }
+        });
+    </script>
+{% endblock callscript %}
+
+
+

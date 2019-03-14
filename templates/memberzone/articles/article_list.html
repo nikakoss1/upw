@@ -1,0 +1,46 @@
+{% extends "panel/panel_base.html" %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <!-- Search field -->
+    <div class="panel">
+        <div class="panel-body">
+            <h4 class="text-center content-group-lg">
+            </h4>
+
+            <form action="#" class="main-search">
+                <div class="input-group content-group">
+                    <div class="has-feedback has-feedback-left">
+                        <input type="text" class="form-control input-xlg" placeholder="Поиск" name="q" id="s" value="{{ request.GET.q }}">
+                        <div class="form-control-feedback">
+                            <i class="icon-search4 text-muted text-size-base"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary btn-xlg">Поиск</button>
+                    </div>
+                </div>
+
+                <div class="row search-option-buttons">
+                    <div class="col-sm-10">
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <ul class="list-inline no-margin-bottom">
+                            <li><a href="{% url 'members:member_article_list' %}" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Сбросить поиск</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+                        <!-- /search field -->
+    {% include "memberzone/articles/member_article_object_list.html" %}
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

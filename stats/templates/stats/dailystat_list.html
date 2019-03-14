@@ -1,0 +1,54 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load has_group %}
+{% load bloger_status %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block ajax_bloger_scripts %}
+{% endblock ajax_bloger_scripts %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="row">
+        <div class="">
+            <div class="panel panel-flat table-responsive no-overflow">
+                <table class="table datatable-basic datatable-responsive">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Всего лидов</th>
+                            <th>Всего клиентов</th>
+                            <th>Всего триалов</th>
+                            <th>Новых лидов сегодня</th>
+                            <th>Новых клиентов сегодня</th>
+                            <th>Всего мемберов</th>
+                            <th>Отключенных триалов</th>
+                            <th>Отключенных мемберов</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in object_list %}
+                        <tr>
+                            <td>{{ obj.created }}</td>
+                            <td>{{ obj.lead_number }}</td>
+                            <td>{{ obj.client_number }}</td>
+                            <td>{{ obj.trial_number }}</td>
+                            <td>{{ obj.new_lead_number }}</td>
+                            <td>{{ obj.new_client_number }}</td>
+                            <td>{{ obj.payed_client_number }}</td>
+                            <td>{{ obj.disabled_trial_number }}</td>
+                            <td>{{ obj.disabled_member_number }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% include "panel/pagination.html" %}
+            </div>
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

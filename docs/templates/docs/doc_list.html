@@ -1,0 +1,17 @@
+{% extends "panel/panel_base.html" %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <div class="panel">
+        <div class="panel-body">
+            {% include "panel/includes/doc_object_list.html" %}
+        </div>
+    </div>
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

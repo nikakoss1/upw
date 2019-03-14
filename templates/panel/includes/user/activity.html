@@ -1,0 +1,80 @@
+
+    <!-- Timeline -->
+    <div class="timeline timeline-left content-group">
+        <div class="timeline-container">
+            {% for obj in activity %}
+                {% if obj.workout or obj.article or obj.foodprogram or obj.workoutcomment or obj.client_create %}
+                        <div class="timeline-row">
+                            <div class="timeline-icon">
+                                <div class="">
+                                    <i class="icon-eye-plus"></i>
+                                </div>
+                            </div>
+                            <div class="panel panel-flat timeline-content">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">{{ obj.created }}</h6>
+                                    <div class="heading-elements">
+                                        <span class="heading-text"><i class="icon-history position-left text-success"></i> {{ obj.created|timesince }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <p class="content-group">
+                                        {{ obj.content }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if obj.progress %}
+                        <div class="timeline-row">
+                            <div class="timeline-icon">
+                                <div class="">
+                                    <i class="icon-eye-plus"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="panel panel-flat timeline-content">
+                                        <div class="panel-heading">
+                                            <h6 class="panel-title">Спереди</h6>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="content-group">
+                                                <img src="{{ MEDIA_URL }}{{ obj.progress.image1 }}" class="img-responsive img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="panel panel-flat timeline-content">
+                                        <div class="panel-heading">
+                                            <h6 class="panel-title">Сбоку</h6>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="content-group">
+                                                <img src="{{ MEDIA_URL }}{{ obj.progress.image2 }}"  class="img-responsive img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="panel panel-flat timeline-content">
+                                        <div class="panel-heading">
+                                            <h6 class="panel-title">Сзади</h6>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="content-group">
+                                                <img src="{{ MEDIA_URL }}{{ obj.progress.image3 }}"  class="img-responsive img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- /timeline -->
+

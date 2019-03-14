@@ -1,0 +1,22 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    <!-- Post -->
+    <div class="panel">
+        <div class="panel-body">
+            <div class="content-group">
+                {{ object.content|safe }}
+            </div>
+        </div>
+    </div>
+    <!-- /post -->
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

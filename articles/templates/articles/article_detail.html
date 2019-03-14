@@ -1,0 +1,52 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+{% block glyphicons %}
+{% endblock glyphicons %}
+<div class="content">
+    <!-- Post -->
+    <div class="panel">
+        <div class="panel-body">
+            <div class="content-group-lg">
+                {% include "panel/includes/carusel.html" %}
+                <h3 class="text-semibold mb-5">
+                    <a href="{{ object.get_absolute_url }}" class="text-default">{{ object.title}}</a>
+                </h3>
+                <ul class="list-inline list-inline-separate text-muted content-group">
+                    <li>{{ object.created }}</li>
+                    {% if object.draft %}<li>ЧЕРНОВИК</li>{% endif %}
+                    <li>Автор: {{ object.user.get_full_name }}</li>
+                </ul>
+
+                <div class="content-group">
+                    {{ object.content|safe }}
+                </div>
+                <div class="content-group hidden-xs">
+                    <div class="btn-group">
+                        {% if object.draft %}<a href="{% url 'articles:article_publish' slug=object.slug %}" class="btn btn-default">Опубликовать</a>{% endif %}
+                        {% if not object.draft %}<a href="{% url 'articles:article_draft' slug=object.slug %}" class="btn btn-default">Снять с публикации</a>{% endif %}
+                        <a href="{{ object.get_update_url }}" class="btn btn-default">Редактировать</a>
+                        <a href="{{ object.get_delete_url }}" class="btn btn-default">Удалить</a>
+                    </div>
+                </div>
+                <div class="content-group visible-xs">
+                    <div class="btn-group-vertical  col-xs-offset-3">
+                        {% if object.draft %}<a href="{% url 'articles:article_publish' slug=object.slug %}" class="btn btn-default">Опубликовать</a>{% endif %}
+                        {% if not object.draft %}<a href="{% url 'articles:article_draft' slug=object.slug %}" class="btn btn-default">Снять с публикации</a>{% endif %}
+                        <a href="{{ object.get_update_url }}" class="btn btn-default">Редактировать</a>
+                        <a href="{{ object.get_delete_url }}" class="btn btn-default">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /post -->
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}

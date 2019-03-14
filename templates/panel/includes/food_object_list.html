@@ -1,0 +1,59 @@
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th><div class="text-center">ВЕС / ККАЛ / БЕЛКИ / ЖИРЫ / УГЛЕВОДЫ</div> </th>
+                <th>Суммарное КБЖУ</th>
+            </tr>
+        </thead>
+        <tbody class="FoodTBody">
+            {% for eattime in day.time_set.all %}
+            <tr class="eatTimeRow" data-eattime="{{ eattime.id }}">
+                <td>{{ eattime }}</td>
+                <td>
+                    <table class="table datatable-basic datatable-responsive dataTable">
+                        <tbody class="foodTable" data-foodurl="{% url 'accounts:food_delete' %}">
+                            {% for food in eattime.food_set.all%}
+                            <tr class="foodRow" data-food="{{ food.id }}">
+                                <td>{{ food.product }} ({% if food.product.product_meal == 'P' %}{{ food.product.kbzu_100g.weight|floatformat:-2 }}г{% else %}{{ food.product.kbzu_1portion.weight }}{% endif %})</td>
+                                <td>{{ food.weight|floatformat:-2 }}</td>
+                                <td>{{ food.kkal|floatformat:-2 }}</td>
+                                <td>{{ food.protein|floatformat:-2 }}</td>
+                                <td>{{ food.fat|floatformat:-2 }}</td>
+                                <td>{{ food.carbohydrate|floatformat:-2 }}</td>
+                                <td><a href="#" class="removeFood"><i class="icon-cross3" title="Удалить продукт"></i></a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>
+                <td>{{ eattime.weight|floatformat:-2 }}/{{ eattime.kkal|floatformat:-2 }}/{{ eattime.protein|floatformat:-2 }}/{{ eattime.fat|floatformat:-2 }}/{{ eattime.carbohydrate|floatformat:-2 }}</td>
+            </tr>
+            {% endfor %}
+            <table class="table">
+                <tbody class="">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table class="table datatable-basic datatable-responsive dataTable">
+                                <tbody>
+                                    <tr class="itog">
+                                        <td class="itog_weight"></td>
+                                        <td class="itog_kkal"></td>
+                                        <td class="itog_protein"></td>
+                                        <td class="itog_fat"></td>
+                                        <td class="itog_carbohydrate"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </tbody>
+    </table>
+</div>
+

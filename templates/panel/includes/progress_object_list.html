@@ -1,0 +1,57 @@
+{% load staticfiles %}
+{% for obj in progress %}
+    <div class="timeline-row">
+        <div class="timeline-icon">
+            <div class="">
+                <i class="icon-star-empty3"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-flat timeline-content">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Спереди</h6>
+                        <div class="heading-elements">
+                            <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> {{ obj.created }}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="content-group">
+                            <img src="{{ MEDIA_URL }}{{ obj.image1 }}" class="img-responsive img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-flat timeline-content">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Сбоку</h6>
+                        <div class="heading-elements">
+                            <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> {{ obj.created }}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="content-group">
+                            <img src="{{ MEDIA_URL }}{{ obj.image2 }}"  class="img-responsive img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-flat timeline-content">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Сзади</h6>
+                        <div class="heading-elements">
+                            <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> {{ obj.created }}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="content-group">
+                            <img src="{{ MEDIA_URL }}{{ obj.image3 }}"  class="img-responsive img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,34 @@
+{% extends "panel/panel_base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+{% include "panel/includes/header.html" %}
+<div class="content">
+    {% include "panel/includes/partners/partner_object_list.html" %}
+    {% include "panel/footer.html" %}
+</div>
+<!-- /content area -->
+{% endblock %}
+{% block callscript %}
+    <script type="text/javascript">
+        // Basic initialization
+        $('.datatable-basic').DataTable({
+            autoWidth: false,
+            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            language: {
+                search: '<span>Фильтр:</span> _INPUT_',
+                lengthMenu: '<span>Показать:</span> _MENU_',
+                paginate: { 'first': 'Первая', 'last': 'Последняя', 'next': '→', 'previous': '←' }
+            },
+            drawCallback: function () {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+            },
+            preDrawCallback: function() {
+                $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+            }
+        });
+    </script>
+{% endblock callscript %}
